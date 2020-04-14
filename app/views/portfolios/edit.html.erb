@@ -1,0 +1,25 @@
+<h1>Portfolio Items</h1>
+
+<%= form_for(@portfolio_item) do |portfolio| %>
+  
+  <div class="field">
+    <%= portfolio.label :title %>
+    <%= portfolio.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= portfolio.label :subtitle %>
+    <%= portfolio.text_field :subtitle %>
+  </div>
+
+
+  <div class="field">
+    <%= portfolio.label :body %>
+    <%= portfolio.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= portfolio.submit %>
+  </div>
+<% end %>
+  
