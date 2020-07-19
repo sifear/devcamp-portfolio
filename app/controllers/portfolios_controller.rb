@@ -42,6 +42,7 @@ class PortfoliosController < ApplicationController
 
     def show
        @portfolio_item = Portfolio.find(params[:id])
+       @some_stuff = "Some stuff from controller"
     end
 
     def destroy

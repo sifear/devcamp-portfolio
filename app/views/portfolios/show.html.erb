@@ -10,3 +10,18 @@
 <% @portfolio_item.technologies.each do |t| %>
 <p><%= t.name %></p>
 <% end %>
+
+<hr>
+
+<%= params.inspect %>
+
+<hr>
+
+<%= session.inspect %>
+
+
+<%= params.inspect %>
+<%= Portfolio.find(params[:id]).title%>
+<%= Portfolio.find_by(id: params[:id]).title%>
+<%= Portfolio.find_by_id(params[:id]).title%>
+<%= @some_stuff %>
