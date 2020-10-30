@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>"/>
+
+    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'blogs', 'data-turbolinks-track': 'reload' %> 
+  </head>
+
+  <body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <% if current_user.is_a?(User) %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+            <%= link_to "Register", new_user_registration_path, method: :get %>
+            <%= link_to "Log in", new_user_session_path, method: :get %>
+      <% end %>
+      <%= yield %>
+
+      
+      <%= render "shared/nav", location: "bottom" %>
+
+      <% if session[:source ]%>
+         <p>Thanks for visiting me from <%= session[:source] %></p>
+      <% end %>
+
+      <%= @seo_keywords  %>
+
+  </body>
+</html>
